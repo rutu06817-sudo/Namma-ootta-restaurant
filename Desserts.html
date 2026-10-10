@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dessert Menu - Namma Ootta</title>
+
+    <style>
+        body {
+            background-color: #dcebd5;
+            color: #315b3b;
+            font-family: Georgia, serif;
+            margin: 8px;
+        }
+
+        .header {
+            background-color: #fff5d9;
+            border: 2px solid #849b70;
+            border-radius: 10px;
+            text-align: center;
+            padding: 15px;
+        }
+
+        h1 {
+            margin: 5px;
+            color: #205732;
+        }
+
+        .banner {
+            background-color: #205732;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .container {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .sidebar {
+            width: 180px;
+            background-color: #fff8df;
+            border: 2px solid #849b70;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .sidebar a {
+            display: block;
+            text-decoration: none;
+            color: #315b3b;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #d6c99e;
+            border-radius: 6px;
+        }
+
+        .sidebar a:hover {
+            background-color: #dce8c9;
+        }
+
+        .content {
+            flex: 1;
+            background-color: #fffdf3;
+            border: 2px solid #849b70;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .section {
+            background-color: #fffaf0;
+            border: 1px solid #d5bd80;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 12px;
+        }
+
+        .heading {
+            background-color: #205732;
+            color: white;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .desserts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .item {
+            background-color: #fffaf0;
+            border: 1px solid #c8a45a;
+            border-radius: 8px;
+            padding: 12px;
+            width: 42%;
+            flex-grow: 1;
+        }
+
+        .item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .item h3 {
+            color: #205732;
+        }
+
+        .price {
+            background-color: #dce8c9;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .footer {
+            background-color: #205732;
+            color: white;
+            border: 3px solid #d5b84c;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: auto;
+            }
+
+            .item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+   <!-- Restaurant Header with Logos in One Line -->
+
+<table width="92%" align="center" border="1"
+       cellpadding="10" cellspacing="5"
+       bgcolor="#FFF8E7">
+
+    <tr>
+        <!-- Left Logo -->
+        <td width="18%" align="center">
+            <img src="C:\Users\Admin\Desktop\project img\logo.jpg"
+                 width="200"
+                 height="200"
+                 alt="Namma Ootta Logo">
+        </td>
+
+        <!-- Center Heading -->
+        <td width="64%" align="center">
+            <h1>
+                <font color="#2E5D34" size="7">
+                    <u>NAMMA OOTTA</u>
+                </font>
+            </h1>
+
+            <h2>
+                <font color="#2E5D34">
+                    R E S T A U R A N T
+                </font>
+            </h2>
+
+            <p>
+                <font color="#2E5D34" size="4">
+                    <i>
+                        Authentic South Indian Taste •
+                        Fresh Ingredients • Traditional Recipes
+                    </i>
+                </font>
+            </p>
+        </td>
+
+        <!-- Right Logo -->
+        <td width="18%" align="center">
+            <img src="C:\Users\Admin\Desktop\project img\logo.jpg"
+                 width="200"
+                 height="200"
+                 alt="Namma Ootta Logo">
+        </td>
+    </tr>
+
+</table>
+    </div>
+
+    <h2 class="banner">DESSERT MENU</h2>
+
+    <div class="container">
+
+        <div class="sidebar">
+            <h2 class="heading">Explore our resaturant</h2>
+            <a href="Home.html">Home</a>
+            <a href="about us.html">About Us</a>
+            <a href="menu.html">Menu</a>           
+	 <a href="reservation.html">Reservation</a>
+        </div>
+
+        <div class="content">
+
+            <div class="section">
+                <h2 class="heading">Sweet Endings, South Indian Style!</h2>
+                <p>Complete your South Indian meal with our traditional sweet treats.</p>
+            </div>
+
+            <h2 class="heading">OUR DESSERTS</h2>
+
+            <div class="desserts">
+
+                <div class="item">
+                    <img src="C:\Users\Admin\Desktop\project img\mysore paak.jpg"
+                    alt="Mysore Pak">
+                    <h3>Mysore Pak</h3>
+                    <p>Rich and delicious sweet made with gram flour, ghee and sugar.</p>
+                    <p class="price">₹120</p>
+                </div>
+
+                <div class="item">
+                    <img src="https://www.whiskaffair.com/wp-content/uploads/2020/11/Semiya-Payasam-2-3.jpg"
+                    alt="Payasam">
+                    <h3>Payasam</h3>
+                    <p>Creamy South Indian dessert made with milk, rice and dry fruits.</p>
+                    <p class="price">₹100</p>
+                </div>
+
+                <div class="item">
+                    <img src="C:\Users\Admin\Desktop\project img\banana halwa.jpg"
+                    alt="Banana Halwa">
+                    <h3>Banana Halwa</h3>
+                    <p>Soft and tasty halwa prepared with ripe bananas, ghee and sugar.</p>
+                    <p class="price">₹110</p>
+                </div>
+
+                <div class="item">
+                    <img src="C:\Users\Admin\Desktop\project img\coconut berfi.jpg"
+                    alt="Coconut Burfi">
+                    <h3>Coconut Burfi</h3>
+                    <p>A traditional sweet made with fresh coconut, milk and sugar.</p>
+                    <p class="price">₹90</p>
+                </div>
+
+            </div>
+
+            <div class="section">
+                <h2><i>End your meal with something sweet!</i></h2>
+            </div>
+
+            <div class="footer">
+                <h1>🌴 Visit Us 🌴</h1>
+                <p>📍 501, Swagat Mall, Chandkheda, Ahmedabad - 382424</p>
+                <p>Contact Us: 7874540000</p>
+                <hr>
+                <i>Thank You for Visiting Our Restaurant!</i>
+                <p> 2026 Namma Ootta Restaurant</p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,655 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Kids Special Menu - Namma Ootta</title>
+
+<style>
+/* ---------- Page ---------- */
+body {
+    background-color: #E6F0DF;
+    font-family: Georgia, "Times New Roman", serif;
+    margin: 0;
+    padding: 10px;
+    color: #3b2a1a;
+}
+
+.page {
+    border: 3px double #6a9a6a;
+    background: #FFFAF0;
+    padding: 8px;
+}
+
+/* ---------- Welcome Bar ---------- */
+.top-bar {
+    background: #1f5c35;
+    color: white;
+    text-align: right;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 8px 14px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 10px;
+}
+
+/* ---------- Restaurant Header ---------- */
+.title-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: #EFE3C2;
+    border: 2px solid #1f5c35;
+    padding: 10px;
+    margin: 12px 25px;
+}
+
+.title-box .logo {
+    width: 18%;
+    min-width: 90px;
+    background: #FFF8E7;
+    border: 1px solid #cdbf98;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.title-box .logo img {
+    width: 100%;
+    max-width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.title-box .title {
+    flex: 1;
+    min-width: 0;
+    background: #FFF8E7;
+    border: 1px solid #cdbf98;
+    text-align: center;
+    padding: 12px 5px;
+}
+
+.title-box h1 {
+    color: #1f5c35;
+    margin: 6px 0 12px;
+    font-size: 34px;
+    letter-spacing: 1px;
+}
+
+.title-box h2 {
+    color: #1f5c35;
+    font-size: 22px;
+    letter-spacing: 3px;
+    margin: 8px 0;
+}
+
+.tagline {
+    text-align: center;
+    color: #c0561a;
+    font-style: italic;
+    font-size: 16px;
+    margin: 16px 0 22px;
+}
+
+/* ---------- Sidebar and Main Layout ---------- */
+.layout {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.sidebar {
+    width: 150px;
+    flex-shrink: 0;
+    background: #FFF5D6;
+    border: 2px solid #cfd8c4;
+    border-radius: 10px;
+    padding: 8px;
+    min-height: 600px;
+}
+
+.sidebar .menu-title {
+    background: #1f5c35;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    display: block;
+    background: #FFFBEF;
+    border: 1px solid #e6dcc0;
+    border-radius: 4px;
+    padding: 6px 8px;
+    margin-bottom: 6px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #3b2a1a;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background: #E6F0DF;
+}
+
+.main {
+    flex: 1;
+    min-width: 0;
+    border: 2px solid #cfd8c4;
+    border-radius: 10px;
+    padding: 8px 10px 14px;
+    background: #FFFAF0;
+}
+
+hr {
+    border: 0;
+    border-top: 2px solid #9b5a3c;
+    margin: 14px 0;
+}
+
+/* ---------- Section Headings ---------- */
+.section {
+    background: #1f5c35;
+    color: white;
+    text-align: center;
+    padding: 2px 10px;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.section h2 {
+    margin: 6px 0;
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+/* Special Combos Heading */
+.section.combo {
+    background: #6B3E26;
+}
+
+/* ---------- Menu Card Tables ---------- */
+table {
+    display: block;
+    width: auto;
+    margin: 12px 10px;
+    background: #FFFAF0;
+    border: 2px solid #cdbf98;
+    padding: 6px;
+}
+
+table tbody {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+}
+
+/* Hide IMAGE / ITEM / PRICE heading row */
+table tr:first-child {
+    display: none;
+}
+
+table tr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #FFFAF0;
+    border: 2px solid #E8D9B0;
+    padding: 12px 8px;
+    min-width: 0;
+}
+
+table td {
+    display: block;
+    border: none;
+    padding: 0;
+    background: transparent;
+}
+
+/* Food Images */
+table img {
+    width: 100px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #2d6a3e;
+    margin-bottom: 8px;
+}
+
+/* Item Name */
+table td b {
+    display: block;
+    color: #b4531d;
+    font-size: 15px;
+    margin: 6px 0;
+}
+
+/* Description */
+table td i {
+    display: block;
+    font-size: 11px;
+    color: #4a3a2a;
+    margin-top: 4px;
+}
+
+/* Combo Items */
+table td em {
+    display: block;
+    font-size: 11px;
+    color: #1f5c35;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+/* Hide Extra Line Breaks */
+table td br {
+    display: none;
+}
+
+/* Price */
+table mark {
+    display: block;
+    background: none;
+    color: #0a8a1a;
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    text-align: center;
+    color: #7a3b1f;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.footer small {
+    display: block;
+    color: #2E8B2E;
+    font-style: italic;
+    font-weight: normal;
+    margin-top: 6px;
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 800px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: auto;
+        min-height: 0;
+    }
+
+    .main {
+        width: auto;
+        box-sizing: border-box;
+    }
+
+    table tbody {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .title-box {
+        gap: 5px;
+        padding: 5px;
+        margin: 10px 0;
+    }
+
+    .title-box .logo {
+        min-width: 0;
+        width: 20%;
+        padding: 4px;
+    }
+
+    .title-box .logo img {
+        height: 70px;
+        width: 100%;
+    }
+
+    .title-box h1 {
+        font-size: 20px;
+    }
+
+    .title-box h2 {
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 480px) {
+    table tbody {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+    <!-- Welcome Bar -->
+    <div class="top-bar">
+        WELCOME TO NAMMA OOTTA
+    </div>
+
+    <!-- Restaurant Header: Logo + Name + Logo -->
+    <div class="title-box">
+
+        <div class="logo">
+            <img src="project img/logo.jpg"
+                 alt="Namma Ootta Restaurant Logo">
+        </div>
+
+        <div class="title">
+            <h1><u>NAMMA OOTTA</u></h1>
+            <h2>L I T T L E    S O U T H I E S</h2>
+        </div>
+
+        <div class="logo">
+            <img src="project img/logo.jpg"
+                 alt="Namma Ootta Restaurant Logo">
+        </div>
+
+    </div>
+
+    <div class="tagline">
+        Fresh and Traditional South Indian Food
+    </div>
+
+    <!-- Page Layout -->
+    <div class="layout">
+
+        <!-- Sidebar Navigation -->
+        <div class="sidebar">
+            <div class="explore-title">explore</div>
+            <a href="Home.html">Home</a>
+            <a href="about us.html">About Us</a>
+            <a href="menu.html"> Menu</a>
+            <a href="reservation.html">Reservation</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main">
+
+            <!-- FUN FAVOURITES -->
+            <div class="section">
+                <h2>Fun Favourites</h2>
+            </div>
+
+            <table>
+                <tr>
+                    <th>IMAGE</th>
+                    <th>ITEM &amp; DESCRIPTION</th>
+                    <th>PRICE</th>
+                </tr>
+
+                <tr>
+                    <td><img src="project img/veg noodles.jpg" alt="Veg Noodles"></td>
+                    <td>
+                        <b>Mini South Indian Style Veg Noodles</b>
+                        <i>Delicious noodles prepared with fresh vegetables and South Indian flavours.</i>
+                    </td>
+                    <td><mark>₹100</mark></td>
+                </tr>
+
+                <tr>
+                    <td><img src="project img/cheese uttapam.jpg" alt="Cheese Uttapam"></td>
+                    <td>
+                        <b>Mini Cheese Uttapam</b>
+                        <i>Soft mini uttapam topped with delicious melted cheese.</i>
+                    </td>
+                    <td><mark>₹100</mark></td>
+                </tr>
+
+                <tr>
+                    <td><img src="project img/corn uttapam .jpg" alt="Corn Uttapam"></td>
+                    <td>
+                        <b>Mini Corn Uttapam</b>
+                        <i>Soft uttapam topped with sweet corn and mild spices.</i>
+                    </td>
+                    <td><mark>₹100</mark></td>
+                </tr>
+
+                <tr>
+                    <td><img src="project img/mini idli.jpg" alt="Mini Idli"></td>
+                    <td>
+                        <b>Mini Idli with Neyyi (Ghee)</b>
+                        <i>Soft bite-sized idlis served with warm and tasty ghee.</i>
+                    </td>
+                    <td><mark>₹90</mark></td>
+                </tr>
+
+                <tr>
+                    <td><img src="project img/idli sambar.jpg" alt="Idli Sambar"></td>
+                    <td>
+                        <b>Mini Idli Sambar</b>
+                        <i>Mini soft idlis served with delicious South Indian sambar.</i>
+                    </td>
+                    <td><mark>₹90</mark></td>
+                </tr>
+            </table>
+
+            <hr>
+
+            <!-- LITTLE SNACKS -->
+            <div class="section">
+                <h2>Little Snacks</h2>
+            </div>
+
+            <table>
+                <tr>
+                    <th>IMAGE</th>
+                    <th>ITEM &amp; DESCRIPTION</th>
+                    <th>PRICE</th>
+                </tr>
+
+                <tr>
+                    <td><img src="project img/fried idli.jpg" alt="Mini Idli Fries"></td>
+                    <td>
+                        <b>Mini Idli Fries</b>
+                        <i>Crispy mini idlis prepared as a fun and tasty snack.</i>
+                    </td>
+                    <td><mark>₹90</mark></td>
+                </tr>
+
+                <tr>
+                    <td><img src="project img/pateto bites.jpg" alt="Potato Bites"></td>
+                    <td>
+                        <b>Mini Potato Bites</b>
+                        <i>Crispy golden potato bites that are perfect for little foodies.</i>
+                    </td>
+                    <td><mark>₹90</mark></td>
+                </tr>
+
+                <tr>
+                    <td><img src="project img/crispy corn.jpg" alt="Crispy Corn"></td>
+                    <td>
+                        <b>Mini Crispy Corn</b>
+                        <i>Crunchy corn bites seasoned with mild and tasty spices.</i>
+                    </td>
+                    <td><mark>₹90</mark></td>
+                </tr>
+
+                <tr>
+                    <td><img src="project img/paniyaram.jpg" alt="Paniyaram"></td>
+                    <td>
+                        <b>Mini Paniyaram</b>
+                        <i>Soft and crispy South Indian paniyaram made in small bite-sized pieces.</i>
+                    </td>
+                    <td><mark>₹90</mark></td>
+                </tr>
+            </table>
+
+            <hr>
+
+            <!-- SWEET TREATS -->
+            <div class="section">
+                <h2>Sweet Treats</h2>
+            </div>
+
+            <table>
+                <tr>
+                    <th>IMAGE</th>
+                    <th>ITEM &amp; DESCRIPTION</th>
+                    <th>PRICE</th>
+                </tr>
+
+                <tr>
+                    <td><img src="project img/vanila ice.jpg" alt="Vanilla Ice Cream"></td>
+                    <td>
+                        <b>Mini Vanilla Ice-Cream</b>
+                        <i>Creamy vanilla ice-cream with a smooth and delicious flavour.</i>
+                    </td>
+                    <td><mark>₹70</mark></td>
+                </tr>
+
+                <tr>
+                    <td><img src="project img/choclate.jpg" alt="Chocolate Ice Cream"></td>
+                    <td>
+                        <b>Mini Chocolate Ice-Cream</b>
+                        <i>Rich and creamy chocolate ice-cream loved by kids.</i>
+                    </td>
+                    <td><mark>₹80</mark></td>
+                </tr>
+
+                <tr>
+                    <td><img src="project img/coconut payasam.jpg" alt="Coconut Payasam"></td>
+                    <td>
+                        <b>Mini Coconut Payasam Cup</b>
+                        <i>Traditional creamy coconut payasam served in a mini cup.</i>
+                    </td>
+                    <td><mark>₹70</mark></td>
+                </tr>
+
+                <tr>
+                    <td><img src="project img/banana .jpg" alt="Banana Ice Cream"></td>
+                    <td>
+                        <b>Mini Banana Ice-Cream</b>
+                        <i>Sweet and creamy banana flavoured ice-cream.</i>
+                    </td>
+                    <td><mark>₹80</mark></td>
+                </tr>
+            </table>
+
+            <hr>
+
+            <!-- LITTLE SIPPERS -->
+            <div class="section">
+                <h2>Little Sippers</h2>
+            </div>
+
+            <table>
+                <tr>
+                    <th>IMAGE</th>
+                    <th>ITEM &amp; DESCRIPTION</th>
+                    <th>PRICE</th>
+                </tr>
+
+                <tr>
+                    <td><img src="project img/lassi.jpg" alt="Sweet Lassi"></td>
+                    <td>
+                        <b>Sweet Lassi</b>
+                        <i>Refreshing creamy yogurt drink with a naturally sweet taste.</i>
+                    </td>
+                    <td><mark>₹50</mark></td>
+                </tr>
+
+                <tr>
+                    <td><img src="project img/strawberry.jpg" alt="Strawberry Milkshake"></td>
+                    <td>
+                        <b>Mini Strawberry Milkshake</b>
+                        <i>Cool and creamy milkshake with delicious strawberry flavour.</i>
+                    </td>
+                    <td><mark>₹90</mark></td>
+                </tr>
+
+                <tr>
+                    <td><img src="project img/choclate milkshake.jpg" alt="Chocolate Milkshake"></td>
+                    <td>
+                        <b>Mini Chocolate Milkshake</b>
+                        <i>Rich chocolate milkshake with a smooth and creamy texture.</i>
+                    </td>
+                    <td><mark>₹100</mark></td>
+                </tr>
+
+                <tr>
+                    <td><img src="project img/mango lassi.jpg" alt="Mango Lassi"></td>
+                    <td>
+                        <b>Mini Mango Lassi</b>
+                        <i>Refreshing yogurt drink blended with sweet mango flavour.</i>
+                    </td>
+                    <td><mark>₹110</mark></td>
+                </tr>
+            </table>
+
+            <hr>
+
+            <!-- SPECIAL KIDS COMBOS -->
+            <div class="section combo">
+                <h2>Special Kids Combos</h2>
+            </div>
+
+            <table>
+                <tr>
+                    <th>IMAGE</th>
+                    <th>KIDS SPECIAL COMBOS</th>
+                    <th>PRICE</th>
+                </tr>
+
+                <tr>
+                    <td><img src="project img/south indian combo.jpeg" alt="South Indian Combo"></td>
+                    <td>
+                        <b>Mini South Indian Combo</b>
+                        <em>Mini Masala Dosa + Mini Idli + Sweet Lassi</em>
+                        <i>A fun South Indian meal specially made for kids.</i>
+                    </td>
+                    <td><mark>₹199</mark></td>
+                </tr>
+
+                <tr>
+                    <td><img src="project img/chesse fun combo.jpg" alt="Cheesy Fun Combo"></td>
+                    <td>
+                        <b>Cheesy Fun Combo</b>
+                        <em>Cheese Dosa + Potato Bites + Chocolate Milkshake</em>
+                        <i>A delicious cheesy combination with a refreshing drink.</i>
+                    </td>
+                    <td><mark>₹219</mark></td>
+                </tr>
+
+                <tr>
+                    <td><img src="project img/tiffin combo.jpg" alt="Little Tiffin Combo"></td>
+                    <td>
+                        <b>Little Tiffin Combo</b>
+                        <em>Mini Idli + Mini Dosa + Mini Paniyaram</em>
+                        <i>Mini ice-cream (any one)</i>
+                        <i>A complete mini South Indian tiffin for kids.</i>
+                    </td>
+                    <td><mark>₹189</mark></td>
+                </tr>
+            </table>
+
+            <hr>
+
+            <!-- Footer -->
+            <div class="footer">
+                Made with love for little foodies
+                <small>Have a tasty and wonderful day!</small>
+            </div>
+
+        </div><!-- /main -->
+    </div><!-- /layout -->
+
+</div><!-- /page -->
+</body>
+</html>

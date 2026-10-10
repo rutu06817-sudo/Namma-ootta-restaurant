@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>The South Indian Restaurant - Dosa Menu</title>
+
+<style>
+/* ---------- Page ---------- */
+body{
+    background-color:#E6F0DF;
+    font-family:Georgia, "Times New Roman", serif;
+    margin:0;
+    padding:10px;
+    color:#3b2a1a;
+}
+
+.page{
+    border:3px double #6a9a6a;
+    background:#FFFAF0;
+    padding:8px;
+}
+
+/* ---------- Top welcome bar ---------- */
+.top-bar{
+    background:#1f5c35;
+    color:white;
+    text-align:right;
+    font-weight:bold;
+    font-size:14px;
+    padding:8px 14px;
+    font-family:Arial, sans-serif;
+    margin-bottom:10px;
+}
+
+/* ---------- Title box ---------- */
+.title-box{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background:#EFE3C2;
+    border:2px solid #cdbf98;
+    padding:8px;
+    margin-bottom:6px;
+}
+.title-box .logo{
+    background:#FFF8E7;
+    border:1px solid #cdbf98;
+    padding:10px 18px;
+    font-size:30px;
+}
+.title-box .title{
+    flex:1;
+    background:#FFF8E7;
+    border:1px solid #cdbf98;
+    text-align:center;
+    padding:6px;
+}
+h1{
+    color:#2E8B2E;
+    margin:6px 0;
+    font-size:34px;
+    letter-spacing:1px;
+}
+.tagline{
+    text-align:center;
+    color:#c0561a;
+    font-style:italic;
+    font-size:12px;
+    margin:8px 0 14px;
+}
+
+/* ---------- Layout: sidebar + main ---------- */
+.layout{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+}
+
+.sidebar{
+    width:150px;
+    flex-shrink:0;
+    background:#FFF5D6;
+    border:2px solid #cfd8c4;
+    border-radius:10px;
+    padding:8px;
+    min-height:600px;
+}
+.sidebar .menu-title{
+    background:#1f5c35;
+    color:white;
+    text-align:center;
+    font-weight:bold;
+    padding:8px;
+    border-radius:20px;
+    margin-bottom:10px;
+}
+.sidebar a{
+    display:block;
+    background:#FFFBEF;
+    border:1px solid #e6dcc0;
+    border-radius:4px;
+    padding:6px 8px;
+    margin-bottom:6px;
+    font-size:11px;
+    font-weight:bold;
+    color:#3b2a1a;
+    text-decoration:none;
+}
+.sidebar a:hover{
+    background:#E6F0DF;
+}
+
+.main{
+    flex:1;
+    border:2px solid #cfd8c4;
+    border-radius:10px;
+    padding:8px 10px 14px;
+    background:#FFFAF0;
+}
+
+hr{
+    border:0;
+    border-top:2px solid #9b5a3c;
+    margin:14px 0;
+}
+
+/* ---------- Hero image ---------- */
+.hero{
+    text-align:center;
+    margin:10px 0;
+}
+.hero img{
+    width:450px;
+    max-width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:10px;
+    border:2px solid #cdbf98;
+}
+
+/* ---------- Green section heading bars ---------- */
+.section{
+    background:#1f5c35;
+    color:white;
+    text-align:center;
+    padding:2px 10px;
+    border-radius:8px;
+    margin:10px 0;
+}
+.section h2{
+    margin:6px 0;
+    font-size:15px;
+    text-decoration:underline;
+}
+
+/* ---------- Tables become 3-column card grids ---------- */
+table{
+    display:block;
+    width:auto;
+    margin:12px 10px;
+    background:#FFFAF0;
+    border:2px solid #cdbf98;
+    padding:6px;
+}
+table tbody{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:6px;
+}
+table tr{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    background:#FFFAF0;
+    border:2px solid #E8D9B0;
+    padding:12px 8px;
+}
+table td{
+    display:block;
+    border:none;
+    padding:0;
+    background:transparent;
+}
+
+/* Food images */
+table img{
+    width:100px;
+    height:70px;
+    object-fit:cover;
+    border-radius:8px;
+    border:2px solid #2d6a3e;
+    margin-bottom:8px;
+}
+
+/* Dish name, description, price */
+table h3{
+    color:#b4531d;
+    font-size:15px;
+    margin:6px 0;
+}
+table h3 mark{
+    background:none;
+    color:#b4531d;
+}
+table i{
+    display:block;
+    font-size:11px;
+    color:#4a3a2a;
+    min-height:28px;
+}
+table br{
+    display:none;
+}
+.price{
+    display:block;
+    color:#0a8a1a;
+    font-weight:bold;
+    font-size:12px;
+    margin:8px 0;
+}
+
+/* ---------- Buy button ---------- */
+.buy-btn{
+    background:#7a3b1f;
+    color:white;
+    border:none;
+    border-radius:8px;
+    padding:6px 18px;
+    font-size:10px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:4px;
+}
+.buy-btn:hover{
+    background:#9b4a26;
+}
+
+/* ---------- Footer ---------- */
+.footer{
+    text-align:center;
+    color:#7a3b1f;
+    font-weight:bold;
+    margin-top:10px;
+}
+.footer small{
+    display:block;
+    color:#2E8B2E;
+    font-style:italic;
+    font-weight:normal;
+    margin-top:6px;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width:800px){
+    .layout{flex-direction:column;}
+    .sidebar{width:auto;min-height:0;}
+    table tbody{grid-template-columns:1fr;}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- Welcome Bar -->
+    <div class="top-bar">
+        WELCOME TO NAMMA OOTTA
+    </div>
+
+    <!-- Restaurant Header -->
+    <div class="title-box">
+
+        <!-- Left Logo -->
+        <div class="logo">
+            <img src="project img/logo.jpg"
+	 width="200"
+                 height="200
+                 alt="Namma Ootta Restaurant Logo">
+        </div>
+
+        <!-- Center Restaurant Name -->
+        <div class="title">
+            <h1><u>NAMMA OOTTA</u></h1>
+            <h2>R E S T A U R A N T</h2>
+        </div>
+
+        <!-- Right Logo -->
+        <div class="logo">
+            <img src="project img/logo.jpg"
+	 width="200"
+                 height="200
+                 alt="Namma Ootta Restaurant Logo">
+        </div>
+
+    </div>
+
+    <!-- Tagline Below Header -->
+    <div class="tagline">
+        Fresh and Traditional South Indian Food
+    </div>
+
+<div class="layout">
+
+    <!-- Sidebar navigation -->
+    <div class="sidebar">
+        <div class="menu-title">Menu</div>
+        <a href="Home.html">Home</a>
+        <a href="C:\Users\Admin\Desktop\about us.html">About Us</a>
+        <a href="menu.html">Menu</a>
+	<a href="C:\Users\Admin\Desktop\reservation.html">Reservation</a>
+    </div>
+
+    <!-- Main content -->
+    <div class="main">
+
+<hr>
+
+
+<div class="section">
+<h2>Classic Dosa</h2>
+</div>
+
+<table>
+<tr>
+<td>
+<img src="C:\Users\Admin\Desktop\project img\photo.jpg">
+</td>
+<td>
+<h3><b>Plain Dosa</b></h3>
+<i>Crispy traditional dosa served with sambar & chutney.</i>
+<br><br>
+<span class="price">₹199</span>
+<button class="buy-btn">Buy now</button>
+</td>
+</tr>
+
+<tr>
+<td>
+<img src="C:\Users\Admin\Desktop\project img\pic.jpg">
+</td>
+<td>
+<h3><b>Masala Dosa</b></h3>
+<i>Crispy dosa filled with spicy potato masala.</i>
+<br><br>
+<span class="price">₹230</span>
+<button class="buy-btn">Buy now</button>
+</td>
+</tr>
+
+<tr>
+<td>
+<img src="C:\Users\Admin\Desktop\project img\hq720.jpg">
+</td>
+<td>
+<h3><b>Butter Dosa</b></h3>
+<i>Golden dosa cooked with rich butter.</i>
+<br><br>
+<span class="price">₹250</span>
+<button class="buy-btn">Buy now</button>
+</td>
+</tr>
+
+<tr>
+<td>
+<img src="C:\Users\Admin\Desktop\project img\stock-photo-ghee-roast-dosa-dosa-is-a-south-indian-food-dosa-with-sambar-green-chutney-red-chutney-white-2465336857.jpg">
+</td>
+<td>
+<h3><b>Ghee Roast Dosa</b></h3>
+<i>Thin crispy dosa roasted with pure ghee.</i>
+<br><br>
+<span class="price">₹260</span>
+<button class="buy-btn">Buy now</button>
+</td>
+</tr>
+</table>
+
+<hr>
+
+<div class="section">
+<h2>Special Dosa</h2>
+</div>
+
+<table>
+<tr>
+<td><img src="C:\Users\Admin\Desktop\project img\mysore.webp"></td>
+<td>
+<h3><b>Mysore Masala Dosa</b></h3>
+<i>Dosa with Mysore chutney and potato masala.</i>
+<br><br>
+<span class="price">₹280</span>
+<button class="buy-btn">Buy now</button>
+</td>
+</tr>
+
+<tr>
+<td><img src="C:\Users\Admin\Desktop\project img\cheese dosa.jpg"></td>
+<td>
+<h3><b>Cheese Dosa</b></h3>
+<i>Crispy dosa loaded with melted cheese.</i>
+<br><br>
+<span class="price">₹290</span>
+<button class="buy-btn">Buy now</button>
+</td>
+</tr>
+
+<tr>
+<td><img src="C:\Users\Admin\Desktop\project img\paneer dosa.jpg"></td>
+<td>
+<h3><b>Paneer Masala Dosa</b></h3>
+<i>Dosa stuffed with spicy paneer filling.</i>
+<br><br>
+<span class="price">₹300</span>
+<button class="buy-btn">Buy now</button>
+</td>
+</tr>
+
+<tr>
+<td><img src="C:\Users\Admin\Desktop\project img\schezwan-dosa3.webp"></td>
+<td>
+<h3><b>Schezwan Dosa</b></h3>
+<i>Fusion dosa with spicy Schezwan flavour.</i>
+<br><br>
+<span class="price">₹280</span>
+<button class="buy-btn">Buy now</button>
+</td>
+</tr>
+
+<tr>
+<td><img src="C:\Users\Admin\Desktop\project img\paper dosa.jpg"></td>
+<td>
+<h3><b>Paper Dosa</b></h3>
+<i>Long, thin and extra crispy dosa.</i>
+<br><br>
+<span class="price">₹199</span>
+<button class="buy-btn">Buy now</button>
+</td>
+</tr>
+</table>
+
+<hr>
+
+<div class="section">
+<h2>South Indian Special</h2>
+</div>
+
+<table>
+<tr>
+<td><img src="C:\Users\Admin\Desktop\project img\benne-dosa-2.webp"></td>
+<td>
+<h3><b>Benne Dosa</b></h3>
+<i>Karnataka style butter dosa.</i>
+<br><br>
+<span class="price">₹220</span>
+<button class="buy-btn">Buy now</button>
+</td>
+</tr>
+
+<tr>
+<td><img src="C:\Users\Admin\Desktop\project img\benne masala dosa.png"></td>
+<td>
+<h3><b>Benne Masala Dosa</b></h3>
+<i>Butter dosa with masala filling.</i>
+<br><br>
+<span class="price">₹249</span>
+<button class="buy-btn">Buy now</button>
+</td>
+</tr>
+
+<tr>
+<td><img src="C:\Users\Admin\Desktop\project img\podii dosa.jpg"></td>
+<td>
+<h3><b>Podi Dosa</b></h3>
+<i>Dosa topped with spicy South Indian podi powder.</i>
+<br><br>
+<span class="price">₹260</span>
+<button class="buy-btn">Buy now</button>
+</td>
+</tr>
+
+<tr>
+<td><img src="C:\Users\Admin\Desktop\project img\rava dosa.jpg"></td>
+<td>
+<h3><b>Rava Dosa</b></h3>
+<i>Crispy semolina dosa.</i>
+<br><br>
+<span class="price">₹240</span>
+<button class="buy-btn">Buy now</button>
+</td>
+</tr>
+
+<tr>
+<td><img src="C:\Users\Admin\Desktop\project img\rava onion dosa.jpg"></td>
+<td>
+<h3><b>Rava Onion Dosa</b></h3>
+<i>Rava dosa topped with onion and spices.</i>
+<br><br>
+<span class="price">₹260</span>
+<button class="buy-btn">Buy now</button>
+</td>
+</tr>
+</table>
+
+<hr>
+
+<div class="section">
+<h2>Chef's Special</h2>
+</div>
+
+<table>
+<tr>
+<td><img src="C:\Users\Admin\Desktop\project img\restuarant special dosa.jpg"></td>
+<td>
+<h3><mark>Restaurant Special Dosa</mark></h3>
+<i>Our signature special dosa loaded with unique flavours.</i>
+<br><br>
+<span class="price">₹320</span>
+<button class="buy-btn">Buy now</button>
+</td>
+</tr>
+
+<tr>
+<td><img src="C:\Users\Admin\Desktop\project img\jambo dosa.jpg"></td>
+<td>
+<h3><mark>Family Jumbo Dosa</mark></h3>
+<i>Extra large dosa perfect for sharing with family.</i>
+<br><br>
+<span class="price">₹399</span>
+<button class="buy-btn">Buy now</button>
+</td>
+</tr>
+
+<tr>
+<td><img src="C:\Users\Admin\Desktop\project img\chocalate dosa.jpg"></td>
+<td>
+<h3><mark>Chocolate Dosa</mark></h3>
+<i>Sweet special dosa filled with delicious chocolate.</i>
+<br><br>
+<span class="price">₹280</span>
+<button class="buy-btn">Buy now</button>
+</td>
+</tr>
+</table>
+
+<hr>
+
+<div class="footer">
+Thank You For Visiting The South Indian Restaurant
+<small>Have a tasty and wonderful day!</small>
+</div>
+
+    </div><!-- /main -->
+</div><!-- /layout -->
+
+</div><!-- /page -->
+</body>
+</html>

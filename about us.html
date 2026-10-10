@@ -1,0 +1,413 @@
+<html>
+<head>
+    <title>About Us - South Indian Restaurant</title>
+
+  
+    <!-- Internal CSS -->
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 12px;
+    background-color: #DCEBD4;
+    color: #3E3026;
+    font-family: Georgia, serif;
+}
+
+/* Main Page Frame */
+
+.page-frame {
+    border: 8px double #245C32;
+    outline: 2px solid #9B7545;
+    padding: 12px;
+    background-color: #FFFAEF;
+}
+
+/* Main Heading */
+h1 {
+    color: #245C32;
+    text-align: center;
+    font-size: 38px;
+}
+
+h2 {
+    background-color: #245C32;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    border: 2px solid #B59A62;
+    border-radius: 10px;
+}
+
+h3 {
+    color: #8B4513;
+    font-family: Georgia, serif;
+}
+
+/* Links */
+a {
+    display: inline-block;
+    background-color: #F8F0D9;
+    color: #245C32;
+    padding: 10px;
+    margin: 4px;
+    border: 1px solid #B59A62;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    background-color: #245C32;
+    color: white;
+}
+
+/* Images */
+img {
+    border: 3px solid #245C32;
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+/* Horizontal Line */
+hr {
+    border: 0;
+    height: 3px;
+    background-color: #8B4513;
+}
+
+/* Moving Heading */
+marquee {
+    background-color: #245C32;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+}
+
+/* Left Menu and Right Content */
+.layout {
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+}
+
+.sidebar {
+    width: 255px;
+    min-width: 220px;
+    background-color: #FFF7D9;
+    border: 3px double #245C32;
+    border-radius: 14px;
+    padding: 10px;
+}
+
+.sidebar h2 {
+    margin: 0 0 10px;
+}
+
+.sidebar a {
+    display: block;
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #FFFAF0;
+    color: #173F20;
+    border: 1px solid #C9BD8A;
+    border-radius: 8px;
+}
+
+.sidebar a:hover {
+    background-color: #245C32;
+    color: white;
+}
+
+/* Right Side Content */
+.main-content {
+    flex: 1;
+    min-width: 0;
+    border: 3px double #245C32;
+    border-radius: 14px;
+    padding: 12px;
+    background-color: #FFFAF0;
+}
+
+/* About Us Sections */
+section {
+    background-color: #FFFDF5;
+    border: 2px solid #D6B36A;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 5px;
+}
+
+/* Paragraph */
+p {
+    font-size: 18px;
+    line-height: 1.7;
+    text-align: center;
+}
+
+/* Visit Us */
+.visit-us {
+    background-color: #245C32;
+    color: white;
+    border: 5px solid #E6A817;
+    border-radius: 18px;
+    padding: 20px;
+}
+
+.visit-us h1,
+.visit-us h3,
+.visit-us p {
+    color: white;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    color: #8B2E2E;
+    font-weight: bold;
+    padding: 15px;
+}
+
+/* Small Screen */
+@media (max-width: 750px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+}
+
+/* Restaurant Logo Header */
+.logo-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #FFF3D6;
+    border: 4px double #245C32;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.restaurant-logo {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border: none;
+    border-radius: 50%;
+}
+
+.brand-name h1 {
+    color: #245C32;
+    font-size: 38px;
+    margin: 5px;
+}
+
+.brand-name h2 {
+    color: #8B4513;
+    background-color: transparent;
+    border: none;
+    margin: 5px;
+    letter-spacing: 5px;
+}
+
+.brand-name p {
+    color: #8B4513;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.about-heading {
+    margin: 10px 0;
+    font-size: 30px;
+}
+
+</style>
+</head>
+
+<body bgcolor="#E6F2E6">
+
+<!-- Restaurant Logo Header -->
+<div class="logo-header">
+
+    <img src="C:\Users\Admin\Desktop\project img\logo.jpg"
+         alt="Namma Ootta Restaurant Logo"
+         class="restaurant-logo">
+
+    <div class="brand-name">
+
+        <h1>NAMMA OOTTA</h1>
+
+        <h2>RESTAURANT</h2>
+
+        <p>
+            Authentic South Indian Taste • Fresh Ingredients • Traditional Recipes
+        </p>
+
+    </div>
+
+</div>
+
+<center>
+    <h2 class="about-heading">ABOUT US</h2>
+</center>
+
+<br>
+
+
+
+    <!-- Left Menu and Right Content -->
+    <div class="layout">
+
+        <!-- LEFT SIDE MENU -->
+        <aside class="sidebar">
+
+           <h2>Explore Our Restaurant</h2>
+
+            <a href="Home.html">Home</a>
+            <a href="about us.html">About Us</a>
+            <a href="menu.html">Menu</a>
+            <a href="reservation.html">Reservation</a>
+
+        </aside>
+
+        <!-- RIGHT SIDE CONTENT -->
+        <main class="main-content">
+
+            <hr>
+
+            <!-- Introduction -->
+            <section>
+                <h2>Welcome to Our Restaurant</h2>
+
+                <center>
+                    <img src="C:\Users\Admin\Downloads\entry photo.jpg.png"
+                         width="300" height="200">
+                </center>
+
+                <p>
+                    Welcome to our <b>South Indian Restaurant!</b>
+                    We serve delicious and authentic South Indian food
+                    prepared with fresh ingredients and traditional recipes.
+                </p>
+
+                <p>
+                    Our restaurant brings the traditional taste of
+                    <i>South India</i> to your table with love and care.
+                </p>
+
+                <center>
+                    <h3>OUR NEWLY LAUNCHED BENNE STYLE DOSA</h3>
+                </center>
+            </section>
+
+            <!-- Our Story -->
+            <section>
+                <h2>Our Story</h2>
+
+                <p>
+                    Our restaurant was started with a passion for
+                    <b>South Indian food and culture.</b>
+                    We wanted to create a place where people can enjoy
+                    tasty and authentic food in a comfortable environment.
+                </p>
+            </section>
+
+            <!-- Our Specialities -->
+            <section>
+                <h2>Our Specialities</h2>
+
+                <h3>🍛 Masala Dosa</h3>
+                <p>Crispy dosa served with delicious potato filling.</p>
+
+                <h3>Benne Style Dosa</h3>
+                <p>
+                    Authentic Benne Dosa served with podi masala
+                    and potato filling.
+                </p>
+
+                <h3>🥣 Idli & Vada</h3>
+                <p>Soft idli and crispy vada served with sambar and chutney.</p>
+
+                <h3>🍽️ South Indian Thali</h3>
+                <p>A complete traditional South Indian meal.</p>
+
+                <h3>☕ Filter Coffee</h3>
+                <p>Traditional and refreshing South Indian filter coffee.</p>
+            </section>
+
+            <!-- Why Choose Us -->
+            <section>
+                <h2>Why Choose Us?</h2>
+
+                <p><b>✓ Fresh Ingredients</b></p>
+                <p><b>✓ Authentic South Indian Taste</b></p>
+                <p><b>✓ Traditional Recipes</b></p>
+                <p><b>✓ Hygienic Food</b></p>
+                <p><b>✓ Friendly Service</b></p>
+            </section>
+
+            <!-- Our Promise -->
+            <section>
+                <h2>Our Promise</h2>
+
+                <center>
+                    <h3>Fresh • Traditional • Delicious</h3>
+                </center>
+
+                <p>
+                    We promise to serve <b>fresh, tasty and hygienic food</b>
+                    while keeping the authentic taste of South India alive.
+                </p>
+
+                <center>
+                    <h3>
+                        <i>Come and enjoy the taste of South India!</i>
+                    </h3>
+                </center>
+            </section>
+
+            <!-- Visit Us -->
+            <section class="visit-us">
+
+                <h1>🌴 Visit Us 🌴</h1>
+
+                <h3>
+                    Experience the authentic taste of South India!
+                </h3>
+
+                <p>
+                    📍 501, Swagat Mall, Chandkheda,
+                    Ahmedabad - 382424
+                </p>
+
+                <p>
+                    📞 <b>Contact Us: 7874540000</b>
+                </p>
+
+            </section>
+
+            <center>
+                <font color="#8B4513" size="4">
+                    <b>Thank You for Visiting Our Restaurant!</b>
+                </font>
+            </center>
+
+        </main>
+
+    </div>
+
+</div>
+
+</body>
+</html>
+            
+
+    
